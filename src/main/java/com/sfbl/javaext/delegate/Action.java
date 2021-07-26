@@ -1,4 +1,4 @@
-package com.sfbl.java.delegate;
+package com.sfbl.javaext.delegate;
 
 public class Action {
     public interface _0 { void execute(); }

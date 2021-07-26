@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.sfbl.java.delegate'
+group 'com.sfbl.javaext'
 version '1.0.0'
 
 repositories {
