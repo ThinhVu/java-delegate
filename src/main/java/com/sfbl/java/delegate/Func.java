@@ -1,6 +1,6 @@
 package com.sfbl.java.delegate;
 
-public class IFunc {
+public class Func {
     public interface _0 { void execute(); }
     public interface _1<T> { T execute(); }
     public interface _2<T1, TResult> { TResult execute(T1 p1); }

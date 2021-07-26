@@ -1,6 +1,6 @@
 package com.sfbl.java.delegate;
 
-public class IAction {
+public class Action {
     public interface _0 { void execute(); }
     public interface _1<T> { void execute(T p); }
     public interface _2<T1, T2> { void execute(T1 p1, T2 p2); }
