@@ -35,7 +35,7 @@ public class Threads {
   }
 
   private static final HashSet<Long> intervalIds = new HashSet<>();
-  public static void setInterval(Action._0 action, long interval) {
+  public static long setInterval(Action._0 action, long interval) {
     long id = generateTimeoutId(intervalIds);
     intervalIds.add(id);
     new Thread(() -> {
@@ -44,6 +44,7 @@ public class Threads {
         Threads.sleep(interval);
       }
     }).start();
+    return id;
   }
   public static void clearInterval(long intervalId) {
     intervalIds.remove(intervalId);
