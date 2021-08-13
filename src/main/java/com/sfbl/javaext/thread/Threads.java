@@ -1,6 +1,7 @@
-package com.sfbl.javaext.utils;
+package com.sfbl.javaext.thread;
 
 import com.sfbl.javaext.delegate.Action;
+import com.sfbl.javaext.thread.exception.StopIntervalException;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -35,13 +36,20 @@ public class Threads {
   }
 
   private static final HashSet<Long> intervalIds = new HashSet<>();
-  public static long setInterval(Action._0 action, long interval) {
+  interface IIntervalAction {
+    void $() throws StopIntervalException;
+  }
+  public static long setInterval(IIntervalAction action, long interval) {
     long id = generateTimeoutId(intervalIds);
     intervalIds.add(id);
     new Thread(() -> {
       while(intervalIds.contains(id)) {
-        action.$();
-        Threads.sleep(interval);
+        try {
+          action.$();
+          Threads.sleep(interval);
+        } catch (StopIntervalException sie) {
+          clearInterval(id);
+        }
       }
     }).start();
     return id;
