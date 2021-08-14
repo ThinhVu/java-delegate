@@ -3,13 +3,14 @@ plugins {
 }
 
 group 'com.sfbl.javaext'
-version '1.0.3'
+version '1.0.4'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation 'net.sourceforge.streamsupport:android-retrofuture:1.7.0'
 }
 
 test {
