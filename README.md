@@ -8,9 +8,9 @@ Using "delegate" to create execution block inside method without the need of int
 import com.sfbl.javaext.delegate.Action;
 import com.sfbl.javaext.delegate.Func;
 
-// declare function w/o param, no return
 class Example {
   void ex() {
+    // declare function w/o param, no return
     Action._0 helloWorld = () -> Log.d("", "Hello world");
     helloWorld.$();
     
