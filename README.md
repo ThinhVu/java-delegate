@@ -1,5 +1,12 @@
 # java 1.8 extension
 
+## Install
+
+Via JitPack:
+
+`https://jitpack.io/#ThinhVu/javaext`
+
+
 ## Delegate equivalent
 
 Using "delegate" to create execution block inside method without the need of interface. 
